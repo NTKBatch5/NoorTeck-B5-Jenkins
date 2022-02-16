@@ -9,6 +9,8 @@ import com.noorteck.qa.pages.MenuPage;
 import com.noorteck.qa.pages.SalaryComponentsPage;
 import com.noorteck.qa.pages.SkillsPage;
 
+import io.restassured.path.json.JsonPath;
+
 
 
 /**
@@ -20,7 +22,8 @@ public class Constants {
 	
 	
 	public static WebDriver driver;
-	
+	public static JsonPath jsonPath;
+
 	//declare class objects and common objects
 	public static LoginPage loginObj;
 	public static MenuPage menuObj;
@@ -28,6 +31,8 @@ public class Constants {
 	public static CommonElementPage commonObj;
 	public static SalaryComponentsPage salCompObj;
 	public static SkillsPage skillsObj;
+	
+	public static String valueUpdated;
 
 }
  

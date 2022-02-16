@@ -3,6 +3,7 @@ package com.noorteck.qa.steps;
 import java.util.List;
 import java.util.Map;
 
+import com.noorteck.qa.utils.CommonLibrary;
 
 //import org.testng.Assert;
 
@@ -34,23 +35,30 @@ public class CommonStepDef extends CommonUI {
 
 	@Given(".* enterValue \"(.*)\" \"(.*)\"$")
 	public void enterValue(String element, String value) {
-
+		valueUpdated = CommonLibrary.randomStringGenerator(value);
+		
 		if (element.contains("jobTitles")) {
-			jobTitlesObj.enter(element, value);
+			jobTitlesObj.enter(element, valueUpdated);
 		} else if (element.contains("salaryComp")) {
-			salCompObj.enter(element, value);
+			salCompObj.enter(element, valueUpdated);
 		} else if ( element.contains("skills")) {
-			skillsObj.enter(element, value);
+			skillsObj.enter(element, valueUpdated);
 		}
 	}
 
 	@Given("User is logged into NTK application {string}")
 	public void login(String region) {
-
-		navigate("https://ntkqa-trials73.orangehrmlive.com/");
-		loginObj.enter("login.username", "Admin");
-		loginObj.enter("login.password", "H0q@c9MhVL");
+		
+		System.out.println(jsonPath.getString("scrum"));
+		navigate(jsonPath.getString(region + ".url"));
+		loginObj.enter("login.username", jsonPath.getString(region + ".username"));
+		loginObj.enter("login.password", jsonPath.getString(region + ".password"));
 		loginObj.click("login.loginButton");
+
+//		navigate("https://ntkqa-trials73.orangehrmlive.com/");
+//		loginObj.enter("login.username", "Admin");
+//		loginObj.enter("login.password", "H0q@c9MhVL");
+//		loginObj.click("login.loginButton");
 
 	}
 

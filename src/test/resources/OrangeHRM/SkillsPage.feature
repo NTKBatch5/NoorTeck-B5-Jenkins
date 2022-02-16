@@ -1,5 +1,6 @@
 Feature: Skills Page
 
+  @US123 @smoke @regression
   Scenario Outline: Verify User able to add new Skills
     Given User is logged into NTK application <region>
     When User navigates to Skills Page | click "menu.skills"
@@ -9,6 +10,12 @@ Feature: Skills Page
     And User clicks save button | click "common.saveButton"
     Then System displays message "Successfully Saved"
 
+    @scrum
     Examples: 
-      | region  | name      | description            |
-      | "scrum" | "1255xyz" | "test  description123" |
+      | region  | name       | description            |
+      | "scrum" | "selenium" | "test  description123" |
+
+    @sit
+    Examples: 
+      | region | name       | description            |
+      | "sit"  | "selenium" | "test  description123" |
