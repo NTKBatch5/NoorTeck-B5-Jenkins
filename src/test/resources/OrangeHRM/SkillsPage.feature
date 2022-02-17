@@ -17,5 +17,8 @@ Feature: Skills Page
 
     @sit
     Examples: 
-      | region | name       | description            |
-      | "sit"  | "selenium" | "test  description123" |
+      | region | name  | description            |
+      | "sit"  | "API" | "test  description123" |
+
+      
+ 

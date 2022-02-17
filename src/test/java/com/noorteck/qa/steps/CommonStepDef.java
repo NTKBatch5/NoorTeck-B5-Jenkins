@@ -49,7 +49,7 @@ public class CommonStepDef extends CommonUI {
 	@Given("User is logged into NTK application {string}")
 	public void login(String region) {
 		
-		System.out.println(jsonPath.getString("scrum"));
+		System.out.println(jsonPath.getString(region));
 		navigate(jsonPath.getString(region + ".url"));
 		loginObj.enter("login.username", jsonPath.getString(region + ".username"));
 		loginObj.enter("login.password", jsonPath.getString(region + ".password"));

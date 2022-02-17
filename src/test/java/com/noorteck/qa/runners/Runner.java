@@ -9,11 +9,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(
 
-		features = "src/test/resources/OrangeHRM/", 
+		features = "src/test/resources/OrangeHRM/SkillsPage.feature", 
 		glue = { "com.noorteck.qa.steps" }, 
 		plugin = { "pretty", "html:target/cucumber.html",
 				"json:target/cucumber.json" }, 
-		//tags ="@scrum",
+		//tags ="@sit",
 		monochrome = true
 
 )
